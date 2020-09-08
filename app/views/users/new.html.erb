@@ -10,14 +10,22 @@
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 </form> -->
 
-<%= form_tag('/users') do%>
-  <%= label_tag 'username', 'Username:'%>
-  <%= text_field_tag 'username'%>
-  <%= label_tag 'email', 'Email:'%>
-  <%= text_field_tag 'email'%>
-  <%= label_tag 'password', 'Password:'%>
-  <%= password_field_tag 'password'%>
-  <%= submit_tag %>
+<%#= form_tag('/users') do%>
+  <%#= label_tag 'username', 'Username:'%>
+  <%#= text_field_tag 'username'%>
+  <%#= label_tag 'email', 'Email:'%>
+  <%#= text_field_tag 'email'%>
+  <%#= label_tag 'password', 'Password:'%>
+  <%#= password_field_tag 'password'%>
+  <%#= submit_tag %>
+<%# end %>
+<%= form_for @user  do |f| %>  
+  <%= f.label :username, 'Username:'%>
+  <%= f.text_field :username%><br><br>
+  <%= f.label :email, 'Email: '%>
+  <%= f.text_field :email, placeholder: 'username@gmail.com'%><br><br>
+  <%= f.label :password, 'Password'%>
+  <%= f.password_field :password, placeholder: 'password here' %><br><br>
+  <%= f.submit 'Save'%>
 <% end %>
-
 
