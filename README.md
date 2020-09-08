@@ -2,6 +2,10 @@
 
 >This project is a Ruby on Rails project. The exercise is based on building forms using Rails.
 
+## Screenshot of Project:
+
+![](screenshot/screenshot.png)
+
 # Getting Started
 You should have Ruby & Ruby on Rails already installed on your machine before you begin.
 
