@@ -19,7 +19,10 @@
   <%#= password_field_tag 'password'%>
   <%#= submit_tag %>
 <%# end %>
-<%= form_for @user  do |f| %>  
+<%= form_for @user, html: {:class => "needs-validation"}  do |f| %>  
+  <% @user.errors.full_messages.each do |error| %>
+  <li><%= error %></li><br>
+  <% end %>
   <%= f.label :username, 'Username:'%>
   <%= f.text_field :username%><br><br>
   <%= f.label :email, 'Email: '%>
@@ -27,5 +30,7 @@
   <%= f.label :password, 'Password'%>
   <%= f.password_field :password, placeholder: 'password here' %><br><br>
   <%= f.submit 'Save'%>
+  
 <% end %>
+
 

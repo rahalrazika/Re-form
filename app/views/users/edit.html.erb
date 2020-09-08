@@ -1,4 +1,7 @@
-<%= form_for @user  do |f| %>  
+<%= form_for @user, html: {:class => "needs-validation"}  do |f| %>  
+  <% @user.errors.full_messages.each do |error| %>
+  <li><%= error %></li><br>
+  <% end %>  
   <%= f.label :username, 'Username:'%>
   <%= f.text_field :username%><br><br>
   <%= f.label :email, 'Email: '%>
